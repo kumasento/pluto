@@ -124,3 +124,11 @@ libtool
 getversion.sh
 missing
 test_libpluto
+
+# Test
+unit_tests
+
+# hidden files
+.outfilename
+.regtile
+.srcfilename
