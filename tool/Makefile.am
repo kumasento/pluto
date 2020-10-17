@@ -16,14 +16,10 @@ endif
 bin_PROGRAMS = pluto
 
 pluto_SOURCES = \
-		ast_transform.h \
-		ast_transform.c \
 		constraints_polylib.c \
 		constraints_polylib.h \
 		main.cpp \
-		osl_pluto.c \
 		pet_to_pluto.cpp \
-		pluto_codegen_if.c \
 		version.h
 
 pluto_CXXFLAGS = $(OPT_FLAGS) $(DEBUG_FLAGS) \

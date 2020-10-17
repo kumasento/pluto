@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "osl_pluto.h"
+#include "pluto/osl_pluto.h"
 
 #include "constraints.h"
 #include "math_support.h"
