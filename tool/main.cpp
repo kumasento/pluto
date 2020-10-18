@@ -35,7 +35,7 @@
 
 #include "math_support.h"
 #include "pet_to_pluto.h"
-#include "pluto.h"
+#include "pluto/internal/pluto.h"
 #include "pluto/osl_pluto.h"
 #include "pluto/pluto.h"
 #include "post_transform.h"

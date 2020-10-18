@@ -27,7 +27,7 @@
 #include "constraints.h"
 #include "constraints_polylib.h"
 #include "math_support.h"
-#include "pluto.h"
+#include "pluto/internal/pluto.h"
 #include "pluto/matrix.h"
 
 #include "polylib/polylib64.h"

@@ -14,7 +14,7 @@
 
 // Not replacing this with a forward declaration due to use of enum types
 // PlutoStmtType and PlutoHypType.
-#include "pluto.h"
+#include "pluto/internal/pluto.h"
 #include "isl/map.h"
 #include "isl/union_map.h"
 

@@ -15,7 +15,7 @@
 
 #include "constraints.h"
 #include "math_support.h"
-#include "pluto.h"
+#include "pluto/internal/pluto.h"
 #include "pluto/matrix.h"
 #include "pluto/pluto.h"
 #include "pluto_codegen_if.h"

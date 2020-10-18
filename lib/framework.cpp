@@ -20,7 +20,7 @@
 #include "ddg.h"
 #include "isl_support.h"
 #include "math_support.h"
-#include "pluto.h"
+#include "pluto/internal/pluto.h"
 #include "pluto/matrix.h"
 #include "pluto/pluto.h"
 #include "program.h"
