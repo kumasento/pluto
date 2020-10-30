@@ -55,6 +55,8 @@ libpluto_la_CXXFLAGS = $(OPT_FLAGS) $(DEBUG_FLAGS) \
    -I$(top_srcdir)/include \
    -I../piplib/include \
    -I$(top_srcdir)/piplib/include \
+	 -I../openscop/include \
+	 -I$(top_srcdir)/openscop/include \
    -I../candl/include \
    -I$(top_srcdir)/candl/include \
    -I../cloog-isl/include \
