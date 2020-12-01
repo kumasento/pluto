@@ -34,11 +34,11 @@ Ploop *pluto_loop_alloc() {
 }
 
 void pluto_loop_print(const Ploop *loop) {
-  printf("t%d {loop with stmts: ", loop->depth + 1);
+  fprintf(stderr, "t%d {loop with stmts: ", loop->depth + 1);
   for (unsigned i = 0; i < loop->nstmts; i++) {
-    printf("S%d, ", loop->stmts[i]->id + 1);
+    fprintf(stderr, "S%d, ", loop->stmts[i]->id + 1);
   }
-  printf("}\n");
+  fprintf(stderr, "}\n");
 }
 
 void pluto_loops_print(Ploop **loops, int num) {

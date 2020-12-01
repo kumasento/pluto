@@ -1522,6 +1522,8 @@ static Dep **deps_read(osl_dependence_p candlDeps, PlutoProg *prog) {
         dep->dpolytope, prog->params,
         stmts[dep->src]->dim + stmts[dep->dest]->dim, 0, npar);
 
+    fprintf(stdout, "Dep type: %d\n", dep->type);
+
     switch (dep->type) {
     case PLUTO_DEP_RAW:
       spos = get_osl_write_access_position(candl_dep->stmt_source_ptr->access,
