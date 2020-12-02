@@ -1418,8 +1418,8 @@ find_cone_complement_hyperplane(Band *band, PlutoMatrix *conc_start_faces,
   pluto_constraints_free(con_start_cst);
 
   if (bestsol == NULL) {
-    printf("[pluto] Cone complement hyperplane not found!\n");
-    printf("[pluto] No tiled concurrent start possible.\n");
+    fprintf(stderr, "[pluto] Cone complement hyperplane not found!\n");
+    fprintf(stderr, "[pluto] No tiled concurrent start possible.\n");
   } else {
     IF_DEBUG(printf("[pluto] Tiled concurrent start possible.\n"););
     for (unsigned j = 0; j < nstmts; j++) {
