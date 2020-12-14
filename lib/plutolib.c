@@ -28,7 +28,7 @@
 #include "program.h"
 
 /// Run Pluto on the supplied PlutoProg.
-static int pluto_schedule_prog(PlutoProg *prog) {
+int pluto_schedule_prog(PlutoProg *prog) {
   // Set global var for rest of Pluto.
   PlutoOptions *options = prog->context->options;
 

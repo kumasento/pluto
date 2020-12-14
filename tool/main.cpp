@@ -530,6 +530,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
     isl_ctx *pctx = isl_ctx_alloc_with_pet_options();
     struct pet_scop *pscop =
         pet_scop_extract_from_C_source(pctx, srcFileName, NULL);
+    pet_scop_dump(pscop);
 
     if (!pscop) {
       fprintf(
@@ -585,6 +586,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
       }
       fclose(src_fp);
 
+      osl_scop_print(stdout, scop);
+
       if (!scop || !scop->statement) {
         fprintf(stderr, "Error extracting polyhedra from source file: \'%s'\n",
                 srcFileName);
@@ -614,6 +617,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
     osl_irregular_free(irreg_ext);
   }
   IF_MORE_DEBUG(pluto_prog_print(stdout, prog));
+
+  // pluto_populate_scop(scop, prog, context);
+  // osl_scop_print(stdout, scop);
+  // return 0;
 
   int dim_sum = 0;
   for (unsigned i = 0; i < prog->nstmts; i++) {

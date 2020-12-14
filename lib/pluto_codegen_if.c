@@ -29,7 +29,7 @@
 #include "cloog/cloog.h"
 #include "osl/extensions/loop.h"
 
-static int get_first_point_loop(Stmt *stmt, const PlutoProg *prog) {
+int get_first_point_loop(Stmt *stmt, const PlutoProg *prog) {
   int i, first_point_loop;
 
   if (stmt->type != ORIG) {

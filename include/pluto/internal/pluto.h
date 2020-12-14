@@ -570,6 +570,7 @@ PlutoConstraints *pluto_compute_region_data(const Stmt *stmt,
                                             const PlutoProg *prog);
 
 int generate_declarations(const PlutoProg *prog, FILE *outfp);
+int get_first_point_loop(Stmt *stmt, const PlutoProg *prog);
 int pluto_gen_cloog_code(const PlutoProg *prog, int cloogf, int cloogl,
                          FILE *cloogfp, FILE *outfp);
 void pluto_add_given_stmt(PlutoProg *prog, Stmt *stmt);
@@ -703,6 +704,9 @@ void populate_scaling_csr_matrices_for_pluto_program(int ***index,
                                                      PlutoProg *prog);
 PlutoMatrix *construct_cplex_objective(const PlutoConstraints *cst,
                                        const PlutoProg *prog);
+
+                                        
+int pluto_schedule_prog(PlutoProg *prog);
 
 #ifdef GLPK
 Graph *build_fusion_conflict_graph(PlutoProg *prog, int *colour, int num_nodes,
