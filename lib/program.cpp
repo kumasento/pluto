@@ -818,6 +818,7 @@ PlutoOptions *pluto_options_alloc() {
   options = (PlutoOptions *)malloc(sizeof(PlutoOptions));
 
   /* Initialize to default */
+  options->indvar_type = 32;
   options->flic = 0;
   options->tile = 1;
   options->intratileopt = 1;

@@ -230,6 +230,9 @@ struct plutoOptions {
 
   /* fast linear independence check */
   int flic;
+
+  /* The indvar type that codegen uses (default: 32, can be 64) */
+  int indvar_type;
 };
 typedef struct plutoOptions PlutoOptions;
 
