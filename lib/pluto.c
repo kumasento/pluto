@@ -22,6 +22,7 @@
 #include "ddg.h"
 #include "math_support.h"
 #include "pluto/internal/pluto.h"
+#include "pluto/internal/ast_transform.h"
 #include "pluto/matrix.h"
 #include "pluto/pluto.h"
 #include "post_transform.h"

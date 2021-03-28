@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "ast_transform.h"
+#include "pluto/internal/ast_transform.h"
 #include "pluto/matrix.h"
 #include "pluto/pluto.h"
 #include "program.h"

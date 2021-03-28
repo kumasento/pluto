@@ -18,7 +18,7 @@
 
 #include "pluto_codegen_if.h"
 
-#include "ast_transform.h"
+#include "pluto/internal/ast_transform.h"
 #include "constraints.h"
 #include "math_support.h"
 #include "pluto/matrix.h"

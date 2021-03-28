@@ -44,8 +44,8 @@ libpluto_la_SOURCES = \
 		      transforms.h \
 					osl_pluto.h \
 					osl_pluto.c \
+					ast_transform.h \
 		      ast_transform.c \
-		      ast_transform.h \
 					pluto_codegen_if.h \
 					pluto_codegen_if.c
 
