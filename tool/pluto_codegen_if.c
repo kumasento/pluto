@@ -18,7 +18,7 @@
 
 #include "pluto_codegen_if.h"
 
-#include "pluto/internal/ast_transform.h"
+#include "ast_transform.h"
 #include "constraints.h"
 #include "math_support.h"
 #include "pluto/matrix.h"
@@ -29,7 +29,7 @@
 #include "cloog/cloog.h"
 #include "osl/extensions/loop.h"
 
-int get_first_point_loop(Stmt *stmt, const PlutoProg *prog) {
+static int get_first_point_loop(Stmt *stmt, const PlutoProg *prog) {
   int i, first_point_loop;
 
   if (stmt->type != ORIG) {
@@ -159,15 +159,6 @@ static void gen_stmt_macro(const Stmt *stmt, PlutoOptions *options,
   fprintf(outfp, "%s\n", stmt->text);
 }
 
-/* Get the string for the induction var type */
-static const char *get_indvar_type(int indvar_type) {
-  if (indvar_type == 32)
-    return "int";
-  else if (indvar_type == 64)
-    return "long long";
-  return NULL;
-}
-
 /* Generate variable declarations and macros */
 int generate_declarations(const PlutoProg *prog, FILE *outfp) {
   int i;
@@ -181,18 +172,9 @@ int generate_declarations(const PlutoProg *prog, FILE *outfp) {
   }
   fprintf(outfp, "\n");
 
-  const char *indvar_type =
-      get_indvar_type(prog->context->options->indvar_type);
-  if (!indvar_type) {
-    fprintf(stderr,
-            "Cannot recognize indvar_type: %d, which should be 32 or 64\n",
-            prog->context->options->indvar_type);
-    exit(1);
-  }
-
   /* Scattering iterators. */
   if (prog->num_hyperplanes >= 1) {
-    fprintf(outfp, "\t\t%s ", indvar_type);
+    fprintf(outfp, "\t\tint ");
     for (i = 0; i < prog->num_hyperplanes; i++) {
       if (i != 0)
         fprintf(outfp, ", ");
@@ -205,10 +187,10 @@ int generate_declarations(const PlutoProg *prog, FILE *outfp) {
   }
 
   if (prog->context->options->parallel) {
-    fprintf(outfp, "\t%s lb, ub, lbp, ubp, lb2, ub2;\n", indvar_type);
+    fprintf(outfp, "\tint lb, ub, lbp, ubp, lb2, ub2;\n");
   }
   /* For vectorizable loop bound replacement */
-  fprintf(outfp, "\tregister %s lbv, ubv;\n\n", indvar_type);
+  fprintf(outfp, "\tregister int lbv, ubv;\n\n");
 
   return 0;
 }

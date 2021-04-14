@@ -1,22 +1,12 @@
 /*
- * PLUTO: An automatic parallelizer and locality optimizer
+ * Pluto: An automatic parallelizer and locality optimizer
  *
  * Copyright (C) 2007-2015 Uday Bondhugula
  *
  * This file is part of Pluto.
  *
- * Pluto is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
-
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * A copy of the GNU General Public Licence can be found in the file
- * `LICENSE' in the top-level directory of this distribution.
+ * This software is available under the MIT license, a copy of which can be
+ * found in the file `LICENSE' in the top-level directory.
  *
  * Top-level file for 'pluto' executable.
  */
@@ -623,10 +613,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
     osl_irregular_free(irreg_ext);
   }
   IF_MORE_DEBUG(pluto_prog_print(stdout, prog));
-
-  // pluto_populate_scop(scop, prog, context);
-  // osl_scop_print(stdout, scop);
-  // return 0;
 
   int dim_sum = 0;
   for (unsigned i = 0; i < prog->nstmts; i++) {

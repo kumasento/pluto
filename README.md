@@ -8,8 +8,8 @@ libpluto provides a thread-safe library interface.
 
 LICENSE
 
-Pluto is available under GPL v3, and libpluto is available under the MIT
-license. Please see the files LICENSE and LICENSE.MIT for more details.
+Pluto and libpluto are available under the MIT LICENSE. Please see the file
+LICENSE in the top-level directory for more details.
 
 INSTALLING PLUTO
 
@@ -195,6 +195,7 @@ doc/DOC.txt
 
 BUGS AND ISSUES
 
-Please report bugs/issues at https://github.com/bondhugula/pluto/issues
+Please report bugs and issues at https://github.com/bondhugula/pluto/issues
 For questions and general discussion, please email
-pluto-development@googlegroups.com.
+pluto-development@googlegroups.com after joining the group:
+https://groups.google.com/g/pluto-development

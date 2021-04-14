@@ -1,3 +1,14 @@
+/*
+ * Pluto: An automatic parallelier and locality optimizer
+ *
+ * Copyright (C) 2007-2012 Uday Bondhugula
+ *
+ * This software is available under the MIT license. Please see LICENSE
+ * in the top-level directory for details.
+ *
+ * This file is part of libpluto.
+ *
+ */
 #ifndef _DDG_H_
 #define _DDG_H_
 
@@ -28,7 +39,7 @@ struct scc {
   int size;
 
   /* Maximum dimensionality statement in this SCC */
-  int max_dim;
+  unsigned max_dim;
 
   /* Id of this SCC */
   int id;
