@@ -318,11 +318,20 @@ echo -e "\n=========================="
 echo "Configuring PET"
 echo "=========================="
 
-if test x$external_clang = xtrue; then
-    configureopts="CXXFLAGS=-fno-rtti --with-clang-prefix=$CLANG_PREFIX --with-clang-exec-prefix=$CLANG_PREFIX --with-isl-builddir=../isl --prefix=$prefix"
+if test x$external_isl = xfalse; then
+  if test x$external_clang = xtrue; then
+      configureopts="CXXFLAGS=-fno-rtti --with-clang-prefix=$CLANG_PREFIX --with-clang-exec-prefix=$CLANG_PREFIX --with-isl-builddir=../isl --prefix=$prefix"
+  else
+      configureopts="CXXFLAGS=-fno-rtti --with-isl-builddir=../isl --prefix=$prefix"
+  fi
 else
-    configureopts="CXXFLAGS=-fno-rtti --with-isl-builddir=../isl --prefix=$prefix"
+  if test x$external_clang = xtrue; then
+      configureopts="CXXFLAGS=-fno-rtti --with-clang-prefix=$CLANG_PREFIX --with-clang-exec-prefix=$CLANG_PREFIX --with-isl=system --with-isl-prefix=$isl_prefix --prefix=$prefix"
+  else
+      configureopts="CXXFLAGS=-fno-rtti --with-isl=system --with-isl-prefix=$isl_prefix --prefix=$prefix"
+  fi
 fi
+
 
 (mkdir -p pet
  cd pet && $REL_SRCDIR_PREFIX/pet/configure ${configureopts})
